@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story 💞</title>
+    <style>
+        body {
+            background-color: #64acf5;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff4081;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color:white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e73570;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #dba3ec;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .section img {
+            max-width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .section img:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            background-color: #fa4c86;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e73570;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Lightbox styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        #lightbox:target {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Our Love Story</h1>
+        <p>From the beginning until forever...</p>
+        <nav>
+            <a href="#how-we-met">How We Met💘</a>
+            <a href="#our-journey">Our Journey💕</a>
+            <a href="#proposal">The Proposal💖</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="section" id="how-we-met">
+            <h2>How We Met</h2>
+            <p>It all started when I Randomly send a freind request to an id name "muskan" . By that id i was mesmerized by you but i didn't knew that this girl would be so special for me and i would dream and pray everyday to marry her and make her mine forever</p>
+            <img src="image2.jpg" alt="MY BABE" onclick="openLightbox('image2.jpg')">
+            <img src="image.jpg" alt="ME" onclick="openLightbox('image.jpg')">
+        </div>
+
+        <div class="section" id="our-journey">
+            <h2>Our Journey</h2>
+            <p>The starting phase had a lot of difficulties as you required more from me as i was completely random to you by i didn't lose hope coz i knew it that i can make u mine by the love,care respect i have for you in heart ❤😘. From a random snapchatter to a bestfriend and then again a random snapchatter and then again bestf and at last on 3.07.2024 we became finally a couple ..Congratulations to both of us...💕</p>
+        </div>
+
+        <div class="section" id="proposal">
+            <h2>The Proposal</h2>
+            <p>Now, I have something very important to ask you love of my lifeeeee...</p>
+            <button onclick="propose()">Click Here</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Our Love Story | All rights reserved</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Your Girlfriend">
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dynamic proposal message based on time of day
+        function propose() {
+            const hour = new Date().getHours();
+            let greeting = "I Would Love to Spend My Life with you will you do the same❤❤?I will Keep u happy forever my princess";
+            
+
+            if (hour < 12) {
+                greeting = "I Would Love to Spend My Life with you will you do the same❤❤?I will Keep u happy forever my princess";
+            } else if (hour < 18) {
+                greeting = "I Would Love to Spend My Life with you will you do the same❤❤?I will Keep u happy forever my princess";
+            } else {
+                greeting = "I Would Love to Spend My Life with you will you do the same❤❤?I will Keep u happy forever my princess";
+            }
+
+            alert(greeting);
+        }
+
+        // Lightbox function to display image in full size
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.style.display = 'flex';
+            lightbox.addEventListener('click', function() {
+                lightbox.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
